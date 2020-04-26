@@ -1,0 +1,14 @@
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Aplicacion.deps.json
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Aplicacion.dll
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Aplicacion.pdb
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Dominio.dll
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Persistencia.dll
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Dominio.pdb
+C:\Dev\PasadenaApp\api\Aplicacion\bin\Debug\netstandard2.0\Persistencia.pdb
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.csprojAssemblyReference.cache
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.csproj.CoreCompileInputs.cache
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.AssemblyInfoInputs.cache
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.AssemblyInfo.cs
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.csproj.CopyComplete
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.dll
+C:\Dev\PasadenaApp\api\Aplicacion\obj\Debug\netstandard2.0\Aplicacion.pdb
