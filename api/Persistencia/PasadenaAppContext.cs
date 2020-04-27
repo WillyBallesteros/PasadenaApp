@@ -240,7 +240,7 @@ namespace Persistencia
 
                 entity.Property(e => e.Apellidos).HasMaxLength(100);
 
-                entity.Property(e => e.Contraseña).HasMaxLength(100);
+                entity.Property(e => e.ContraseÃ±a).HasMaxLength(100);
 
                 entity.Property(e => e.Email).HasMaxLength(80);
 
