@@ -1,7 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Dominio;
 using Microsoft.Extensions.Configuration;
 
 namespace Persistencia

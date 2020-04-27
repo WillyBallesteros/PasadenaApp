@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "LEp64uPRYdwGeHQXja+ce8XcEdapWfuYM/blou1VWYp3rTEnDDYaTpP1xPuiIO/ylwGIuRLS8cte07avJaNXiQ==",
-  "success": true,
+  "dgSpecHash": "GuIo9+RMxmk8SYzj0h5Q+gZxCdZ2smPCA73Zxo7ebu8fTzJo/yku5Lr8bzEPbLAD4qp8xgToao2Ex8peVZMRxg==",
+  "success": false,
   "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\Persistencia\\Persistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
@@ -121,5 +121,15 @@
     "C:\\Users\\William\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Core is not compatible with netstandard2.0 (.NETStandard,Version=v2.0). Project Core supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

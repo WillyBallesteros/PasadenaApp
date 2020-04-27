@@ -1744,17 +1744,14 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Dominio/1.0.0": {
+      "Core/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.1.6"
-        },
+        "framework": "Unsupported,Version=v0.0",
         "compile": {
-          "bin/placeholder/Dominio.dll": {}
+          "bin/placeholder/Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Dominio.dll": {}
+          "bin/placeholder/Core.dll": {}
         }
       }
     }
@@ -6300,15 +6297,15 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Dominio/1.0.0": {
+    "Core/1.0.0": {
       "type": "project",
-      "path": "../Dominio/Dominio.csproj",
-      "msbuildProject": "../Dominio/Dominio.csproj"
+      "path": "../Core/Core.csproj",
+      "msbuildProject": "../Core/Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Dominio >= 1.0.0",
+      "Core >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.2",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.2",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.1.6",
@@ -6347,8 +6344,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Dev\\PasadenaApp\\api\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Dominio\\Dominio.csproj"
+            "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
             }
           }
         }
@@ -6398,5 +6395,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Core is not compatible with netstandard2.0 (.NETStandard,Version=v2.0). Project Core supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

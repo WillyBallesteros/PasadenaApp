@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Dominio;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Persistencia;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
@@ -13,15 +6,9 @@ namespace WebAPI.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private readonly PasadenaAppContext _context;
-        public WeatherForecastController(PasadenaAppContext context)
-        {
-            _context = context;
-        }
-
         [HttpGet]
-        public IEnumerable<Departamentos> Get() {
-            return _context.Departamentos.ToList();
+        public string Get() {
+            return "test";
         }
     }
 }

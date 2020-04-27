@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "hpkJ92k7RqCGBzrWMSSfFC0By33LSaOhKJpOFg8BPJCWPTA1R3yLtD63fjlfKjHU5f8GmKBVW+2fHCw21+NyFA==",
-  "success": true,
+  "dgSpecHash": "82YH2fgR4qFcyuMVUEOYNCNI6GwYJ5rPGr7O1HdU3dNHK98wGVEv0xWPw6g1HANlCAcDGuh6KighTKOsJV+Qpw==",
+  "success": false,
   "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\Aplicacion\\Aplicacion.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\William\\.nuget\\packages\\mediatr\\8.0.0\\mediatr.8.0.0.nupkg.sha512",
-    "C:\\Users\\William\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -123,5 +121,15 @@
     "C:\\Users\\William\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Core is not compatible with netstandard2.0 (.NETStandard,Version=v2.0). Project Core supports: netcoreapp3.1 (.NETCoreApp,Version=v3.1)",
+      "libraryId": "Core",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
