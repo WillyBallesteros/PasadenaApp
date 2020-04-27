@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Core.Domain
 {
-    public partial class Anuncios
+    public class Anuncios
     {
         public int AnuncioId { get; set; }
         public string FechaCreacion { get; set; }

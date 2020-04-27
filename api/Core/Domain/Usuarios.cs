@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Core.Domain
 {
-    public partial class Usuarios
+    public class Usuarios
     {
         public Usuarios()
         {

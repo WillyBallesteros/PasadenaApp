@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7i6uiYj6jxEey/RT5B5J0syeYYDQbAsfe8CnnNM5CChdBYFcxF9ZRnFs5OCcXzMc6DXi+UnoClWLsB7y/RB/YQ==",
+  "dgSpecHash": "FFhQrv2RNR9OS3aO/fOBtBa+vt/odcLjGZcpXEDyK5FKRhkNSP6sHhgN9cipqancP9WcmDHAYGwgjK5QQwdHyA==",
   "success": true,
   "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\William\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

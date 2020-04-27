@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Core.Domain
 {
-    public partial class Ciudades
+    public class Ciudades
     {
         public Ciudades()
         {

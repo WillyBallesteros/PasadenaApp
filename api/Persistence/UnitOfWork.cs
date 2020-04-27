@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Core;
 using Core.Repositories;
 using Persistence.Repositories;
@@ -18,8 +16,6 @@ namespace Persistence
         }
 
         public IDepartamentosRepository Departamentos { get; private set; }
-
-        IDepartamentosRepository IUnitOfWork.Departamentos => throw new NotImplementedException();
 
         public int Complete()
         {

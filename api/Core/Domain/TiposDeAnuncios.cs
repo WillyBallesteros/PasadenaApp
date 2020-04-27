@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Core.Domain
 {
-    public partial class TiposDeAnuncios
+    public class TiposDeAnuncios
     {
         public TiposDeAnuncios()
         {
