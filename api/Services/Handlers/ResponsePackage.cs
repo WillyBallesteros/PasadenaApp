@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Services.Handlers
+﻿namespace Services.Handlers
 {
     public class ResponsePackage<T>
     {

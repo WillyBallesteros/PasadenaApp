@@ -1,15 +1,23 @@
 using AutoMapper;
 using Core;
 using Core.AutoMapperConfiguration;
+using Core.Domain;
+using Core.Validation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using Services.AuthService;
 using Services.Departamento;
+
 
 namespace WebAPI
 {
@@ -25,6 +33,13 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Fluent Validations para cuando se agreguen datos desde la app, por ahora no
+            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginPayloadValidator>());
+
+            //services.AddControllers();
+
+
+
             services.AddDbContext<PasadenaAppContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -33,9 +48,9 @@ namespace WebAPI
             {
                 mc.AddProfile(new AutoMapping());
             });
-            IMapper mapper = mappingConfig.CreateMapper();
+            var mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
-            services.AddControllers();
+
 
             services.AddSwaggerGen(c =>
             {
@@ -44,6 +59,16 @@ namespace WebAPI
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDepartamentoService, DepartamentoService>();
+            services.AddScoped<IAuthService, AuthService>();
+
+
+            //Configuración de AspIdentityCore
+            var builder = services.AddIdentityCore<Usuarios>();
+            var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+            identityBuilder.AddEntityFrameworkStores<PasadenaAppContext>();
+            identityBuilder.AddSignInManager<SignInManager<Usuarios>>();
+            services.TryAddSingleton<ISystemClock, SystemClock>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

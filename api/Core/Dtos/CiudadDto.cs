@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Core.Domain;
-
-namespace Core.Dtos
+﻿namespace Core.Dtos
 {
     public class CiudadDto
     {

@@ -1,11 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Core.Domain;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Persistence;
 
 namespace WebAPI
 {
@@ -13,7 +14,24 @@ namespace WebAPI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var hostServer = CreateHostBuilder(args).Build();
+            using (var ambiente = hostServer.Services.CreateScope())
+            {
+                var services = ambiente.ServiceProvider;
+                try
+                {
+                    var userManager = services.GetRequiredService<UserManager<Usuarios>>();
+                    var context = services.GetRequiredService<PasadenaAppContext>();
+                    context.Database.Migrate();
+                    DataPrueba.InsertarData(context, userManager).Wait();
+                }
+                catch (Exception ex)
+                {
+                    var loggin = services.GetRequiredService<ILogger<Program>>();
+                    loggin.LogError(ex, "Ocurrio un error en la migración");
+                }
+            }
+            hostServer.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

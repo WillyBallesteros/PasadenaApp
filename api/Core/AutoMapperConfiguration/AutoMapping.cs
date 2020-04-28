@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using AutoMapper;
 using Core.Domain;
-using AutoMapper;
 using Core.Dtos;
 
 namespace Core.AutoMapperConfiguration
@@ -13,6 +10,10 @@ namespace Core.AutoMapperConfiguration
         {
             CreateMap<Departamentos, DepartamentoDto>();
             CreateMap<DepartamentoDto, Departamentos>();
+            CreateMap<Usuarios, UsuarioDto>();
+            CreateMap<UsuarioDto, Usuarios>();
+            CreateMap<Usuarios, LoginDto>();
+            CreateMap<LoginDto, Usuarios>();
         }
     }
 }

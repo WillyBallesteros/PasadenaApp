@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Core.Domain
+﻿namespace Core.Domain
 {
     public class Anuncios
     {

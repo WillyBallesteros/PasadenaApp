@@ -1,12 +1,11 @@
-using System;
 using Core.Domain;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Configuration;
 
 namespace Persistence
 {
-    public partial class PasadenaAppContext : DbContext
+    public class PasadenaAppContext : IdentityDbContext<Usuarios>
     {
         public IConfiguration Configuration { get; }
         public PasadenaAppContext()
@@ -26,8 +25,6 @@ namespace Persistence
         public virtual DbSet<Marcas> Marcas { get; set; }
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<PuntosDeVentas> PuntosDeVentas { get; set; }
-        public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<RolesDeUsuarios> RolesDeUsuarios { get; set; }
         public virtual DbSet<TiposDeAnuncios> TiposDeAnuncios { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
 
@@ -189,38 +186,6 @@ namespace Persistence
                     .HasConstraintName("FK_PuntoVenta_Ciudad");
             });
 
-            modelBuilder.Entity<Roles>(entity =>
-            {
-                entity.HasKey(e => e.RolId)
-                    .HasName("PK_Rol");
-
-                entity.ToTable("Roles", "auth");
-
-                entity.Property(e => e.RolNombre).HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<RolesDeUsuarios>(entity =>
-            {
-                entity.HasKey(e => new { e.UsuarioId, e.RolId })
-                    .HasName("PK_UsuarioRol");
-
-                entity.ToTable("RolesDeUsuarios", "auth");
-
-                entity.Property(e => e.Descripcion).HasMaxLength(50);
-
-                entity.HasOne(d => d.Rol)
-                    .WithMany(p => p.RolesDeUsuarios)
-                    .HasForeignKey(d => d.RolId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UsuarioRol_Rol");
-
-                entity.HasOne(d => d.Usuario)
-                    .WithMany(p => p.RolesDeUsuarios)
-                    .HasForeignKey(d => d.UsuarioId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_UsuarioRol_Usuario");
-            });
-
             modelBuilder.Entity<TiposDeAnuncios>(entity =>
             {
                 entity.HasKey(e => e.TipoAnuncioId)
@@ -233,16 +198,14 @@ namespace Persistence
 
             modelBuilder.Entity<Usuarios>(entity =>
             {
-                entity.HasKey(e => e.UsuarioId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK_Usuario");
 
                 entity.ToTable("Usuarios", "auth");
 
                 entity.Property(e => e.Apellidos).HasMaxLength(100);
 
-                entity.Property(e => e.Contraseña).HasMaxLength(100);
-
-                entity.Property(e => e.Email).HasMaxLength(80);
+                entity.Property(e => e.Email).HasMaxLength(100);
 
                 entity.Property(e => e.Nombres).HasMaxLength(100);
 
@@ -261,9 +224,13 @@ namespace Persistence
                     .HasConstraintName("FK_Usuario_PuntoVenta");
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            //OnModelCreatingPartial(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        private void OnModelCreatingPartial(ModelBuilder modelBuilder)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

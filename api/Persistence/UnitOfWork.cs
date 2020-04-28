@@ -1,5 +1,4 @@
-﻿using System;
-using Core;
+﻿using Core;
 using Core.Repositories;
 using Persistence.Repositories;
 
