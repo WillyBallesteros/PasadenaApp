@@ -141,6 +141,15 @@ C:\dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkC
 C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.dll
 C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Security.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Security.pdb
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Dev\PasadenaApp\api\WebAPI\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Dev\PasadenaApp\api\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.csproj.CoreCompileInputs.cache
-C:\Dev\PasadenaApp\api\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Dev\PasadenaApp\api\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Dev\PasadenaApp\api\WebAPI\obj\Debug\netcoreapp3.1\WebAPI.MvcApplicationPartsAssemblyInfo.cs

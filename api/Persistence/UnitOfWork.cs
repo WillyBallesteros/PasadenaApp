@@ -12,9 +12,13 @@ namespace Persistence
         {
             _context = context;
             Departamentos = new DepartamentosRepository(_context);
+            Usuarios = new UsuariosRepository(_context);
+            Productos = new ProductosRepository(_context);
         }
 
         public IDepartamentosRepository Departamentos { get; private set; }
+        public IUsuariosRepository Usuarios { get; private set; }
+        public IProductosRepository Productos { get; private set; }
 
         public int Complete()
         {

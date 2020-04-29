@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{027F99FA-DA4C-4020-868B-F7776FB09974}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{8DE2AB42-D3AB-461A-A8F0-6CADC3B88B19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{8DE2AB42-D3AB-461A-A8F0-6CADC3B88B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{6203885D-CA40-40D9-9F1F-62E1C20BFB87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{6203885D-CA40-40D9-9F1F-62E1C20BFB87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{4A3BE25D-48D7-4085-A793-86C5B28E695A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{4A3BE25D-48D7-4085-A793-86C5B28E695A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Security\Security.csproj", "{57637891-CB7C-4FBB-B89C-D5A39F8003A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,18 @@ Global
 		{4A3BE25D-48D7-4085-A793-86C5B28E695A}.Release|x64.Build.0 = Release|Any CPU
 		{4A3BE25D-48D7-4085-A793-86C5B28E695A}.Release|x86.ActiveCfg = Release|Any CPU
 		{4A3BE25D-48D7-4085-A793-86C5B28E695A}.Release|x86.Build.0 = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|x64.Build.0 = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Debug|x86.Build.0 = Debug|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|x64.Build.0 = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|x86.ActiveCfg = Release|Any CPU
+		{57637891-CB7C-4FBB-B89C-D5A39F8003A2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

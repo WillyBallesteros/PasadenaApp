@@ -5,6 +5,4 @@ namespace Core.Repositories
     public interface IDepartamentosRepository : IRepository<Departamentos>
     {
     }
-
-
 }

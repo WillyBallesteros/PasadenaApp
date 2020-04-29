@@ -17,7 +17,7 @@ namespace Services.Departamento
         }
         public ResponsePackage<IEnumerable<DepartamentoDto>> GetAllDepartamentos()
         {
-            var departamentos = _unitOfWork.Departamentos.GetAll();
+            var departamentos = _unitOfWork.Departamentos.Get();
             var departamentosDto = _mapper.Map<IEnumerable<DepartamentoDto>>(departamentos);
 
             return new ResponsePackage<IEnumerable<DepartamentoDto>>

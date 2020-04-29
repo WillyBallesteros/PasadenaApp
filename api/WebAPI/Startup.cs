@@ -1,3 +1,4 @@
+using System.Text;
 using AutoMapper;
 using Core;
 using Core.AutoMapperConfiguration;
@@ -5,18 +6,25 @@ using Core.Domain;
 using Core.Validation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using Security.TokenSecurity;
 using Services.AuthService;
+using Services.ContractService;
 using Services.Departamento;
+using Services.Producto;
 
 
 namespace WebAPI
@@ -33,17 +41,20 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Fluent Validations para cuando se agreguen datos desde la app, por ahora no
-            services.AddControllers().AddFluentValidation(cfg => cfg.RegisterValidatorsFromAssemblyContaining<LoginPayloadValidator>());
-
-            //services.AddControllers();
-
-
-
             services.AddDbContext<PasadenaAppContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddControllers(opt =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                opt.Filters.Add(new AuthorizeFilter(policy));
+            }).AddFluentValidation(cfg =>
+                cfg.RegisterValidatorsFromAssemblyContaining<LoginPayloadValidator>()
+                   .RegisterValidatorsFromAssemblyContaining<RegisterPayloadValidator>()
+            );
+
             var mappingConfig = new MapperConfiguration(mc =>
             {
                 mc.AddProfile(new AutoMapping());
@@ -59,8 +70,9 @@ namespace WebAPI
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IDepartamentoService, DepartamentoService>();
+            services.AddScoped<IProductoService, ProductoService>();
             services.AddScoped<IAuthService, AuthService>();
-
+            services.AddScoped<IJwtGenerator, JwtGenerator>();
 
             //Configuración de AspIdentityCore
             var builder = services.AddIdentityCore<Usuarios>();
@@ -69,6 +81,18 @@ namespace WebAPI
             identityBuilder.AddSignInManager<SignInManager<Usuarios>>();
             services.TryAddSingleton<ISystemClock, SystemClock>();
 
+            //Autenticacion
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Mi palabra secreta MathiasDavith"));
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+            {
+                opt.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = key,
+                    ValidateAudience = false,
+                    ValidateIssuer = false
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,6 +114,7 @@ namespace WebAPI
             }
 
             //app.UseHttpsRedirection();
+            app.UseAuthentication();
 
             app.UseRouting();
 

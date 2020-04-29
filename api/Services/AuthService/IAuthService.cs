@@ -8,5 +8,6 @@ namespace Services.AuthService
     public interface IAuthService
     {
         Task<ResponsePackage<LoginDto>> Ingreso(LoginPayload payload);
+        Task<ResponsePackage<RegisterDto>> Registro(RegisterPayload payload);
     }
 }

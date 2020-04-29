@@ -184,6 +184,12 @@ namespace Persistence.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Detalle")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("GrupoId")
                         .HasColumnType("int");
 
@@ -201,12 +207,21 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("Presentacion")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProductoNombre")
                         .HasColumnType("nvarchar(100)")
                         .HasMaxLength(100);
 
                     b.Property<int?>("PuntoVentaId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("ValorAnterior")
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("ProductoId")
                         .HasName("PK_Producto");

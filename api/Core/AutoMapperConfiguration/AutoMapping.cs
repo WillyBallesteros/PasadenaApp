@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Domain;
 using Core.Dtos;
+using Core.Payload;
 
 namespace Core.AutoMapperConfiguration
 {
@@ -14,6 +15,12 @@ namespace Core.AutoMapperConfiguration
             CreateMap<UsuarioDto, Usuarios>();
             CreateMap<Usuarios, LoginDto>();
             CreateMap<LoginDto, Usuarios>();
+            CreateMap<RegisterPayload, Usuarios>();
+            CreateMap<Usuarios, RegisterPayload>();
+            CreateMap<Usuarios, RegisterDto>();
+            CreateMap<RegisterDto, Usuarios>();
+            CreateMap<Productos, ProductoDto>();
+            CreateMap<ProductoDto, Productos>();
         }
     }
 }
