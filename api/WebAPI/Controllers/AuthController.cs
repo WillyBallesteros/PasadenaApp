@@ -46,5 +46,30 @@ namespace WebAPI.Controllers
             return Ok(responsePackage);
         }
 
+        /// <summary>
+        ///     Obtener Usuario
+        /// </summary>
+        [HttpGet]
+        [AllowAnonymous]
+        [Route("GetCurrentUser")]
+        // POST: api/v1/Auth/GetCurrentUser/
+        public async Task<ActionResult<LoginDto>> GetCurrentUser()
+        {
+            var responsePackage = await _authService.GetUser();
+            return Ok(responsePackage);
+        }
+
+        /// <summary>
+        ///     Registro de Usuario
+        /// </summary>
+        /// <param name="UpdateUserPayload"></param>
+        [HttpPost]
+        [Route("UpdateUser")]
+        // POST: api/v1/Auth/UpdateUser/
+        public async Task<ActionResult<LoginDto>> UpdateUser(UpdateUserPayload payload)
+        {
+            var responsePackage = await _authService.UpdateUser(payload);
+            return Ok(responsePackage);
+        }
     }
 }

@@ -320,6 +320,23 @@ namespace Persistence.Migrations
                     b.ToTable("TiposDeAnuncios","cart");
                 });
 
+            modelBuilder.Entity("Core.Domain.TiposDeDocumentos", b =>
+                {
+                    b.Property<int>("TipoDocumentoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TipoDocumentoNombre")
+                        .HasColumnType("nvarchar(80)")
+                        .HasMaxLength(80);
+
+                    b.HasKey("TipoDocumentoId")
+                        .HasName("PK_TipoDocumento");
+
+                    b.ToTable("TiposDeDocumentos","auth");
+                });
+
             modelBuilder.Entity("Core.Domain.Usuarios", b =>
                 {
                     b.Property<string>("Id")
@@ -390,6 +407,9 @@ namespace Persistence.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
+                    b.Property<int?>("TipoDocumentoId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
 
@@ -411,6 +431,8 @@ namespace Persistence.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.HasIndex("PuntoVentaId");
+
+                    b.HasIndex("TipoDocumentoId");
 
                     b.ToTable("AspNetUsers","auth");
                 });
@@ -609,6 +631,11 @@ namespace Persistence.Migrations
                         .WithMany("Usuarios")
                         .HasForeignKey("PuntoVentaId")
                         .HasConstraintName("FK_Usuario_PuntoVenta");
+
+                    b.HasOne("Core.Domain.TiposDeDocumentos", "TipoDocumento")
+                        .WithMany("Usuarios")
+                        .HasForeignKey("TipoDocumentoId")
+                        .HasConstraintName("FK_Usuario_TipoDocumento");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

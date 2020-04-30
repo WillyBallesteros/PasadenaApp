@@ -4,8 +4,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Core.Domain;
+using Core.Repositories;
 using Microsoft.IdentityModel.Tokens;
-using Services.ContractService;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace Security.TokenSecurity

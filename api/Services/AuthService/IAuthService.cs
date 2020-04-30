@@ -9,5 +9,7 @@ namespace Services.AuthService
     {
         Task<ResponsePackage<LoginDto>> Ingreso(LoginPayload payload);
         Task<ResponsePackage<RegisterDto>> Registro(RegisterPayload payload);
+        Task<ResponsePackage<LoginDto>> GetUser();
+        Task<ResponsePackage<RegisterDto>> UpdateUser(UpdateUserPayload payload);
     }
 }

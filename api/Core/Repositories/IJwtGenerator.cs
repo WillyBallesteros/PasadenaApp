@@ -1,6 +1,6 @@
 ﻿using Core.Domain;
 
-namespace Services.ContractService
+namespace Core.Repositories
 {
     public interface IJwtGenerator
     {

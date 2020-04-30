@@ -3,6 +3,7 @@ using AutoMapper;
 using Core;
 using Core.AutoMapperConfiguration;
 using Core.Domain;
+using Core.Repositories;
 using Core.Validation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
@@ -22,7 +23,6 @@ using Microsoft.OpenApi.Models;
 using Persistence;
 using Security.TokenSecurity;
 using Services.AuthService;
-using Services.ContractService;
 using Services.Departamento;
 using Services.Producto;
 
@@ -41,6 +41,11 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("corsApp", builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
+
             services.AddDbContext<PasadenaAppContext>(opt =>
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
@@ -53,6 +58,7 @@ namespace WebAPI
             }).AddFluentValidation(cfg =>
                 cfg.RegisterValidatorsFromAssemblyContaining<LoginPayloadValidator>()
                    .RegisterValidatorsFromAssemblyContaining<RegisterPayloadValidator>()
+                   .RegisterValidatorsFromAssemblyContaining<UpdateUserPayloadValidator>()
             );
 
             var mappingConfig = new MapperConfiguration(mc =>
@@ -73,6 +79,7 @@ namespace WebAPI
             services.AddScoped<IProductoService, ProductoService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IJwtGenerator, JwtGenerator>();
+            services.AddScoped<IUserSession, UserSession>();
 
             //Configuración de AspIdentityCore
             var builder = services.AddIdentityCore<Usuarios>();
@@ -98,6 +105,8 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("corsApp");
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
