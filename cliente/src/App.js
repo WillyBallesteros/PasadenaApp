@@ -8,7 +8,7 @@ function App() {
   
   return (
     <MuithemeProvider theme={theme}>
-      <RegistrarUsuario/>
+      <PerfilUsuario/>
     </MuithemeProvider>
     
   )  

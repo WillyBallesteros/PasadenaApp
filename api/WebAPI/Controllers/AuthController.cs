@@ -53,7 +53,7 @@ namespace WebAPI.Controllers
         [AllowAnonymous]
         [Route("GetCurrentUser")]
         // POST: api/v1/Auth/GetCurrentUser/
-        public async Task<ActionResult<LoginDto>> GetCurrentUser()
+        public async Task<ActionResult<UsuarioDto>> GetCurrentUser()
         {
             var responsePackage = await _authService.GetUser();
             return Ok(responsePackage);
@@ -63,9 +63,9 @@ namespace WebAPI.Controllers
         ///     Registro de Usuario
         /// </summary>
         /// <param name="UpdateUserPayload"></param>
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateUser")]
-        // POST: api/v1/Auth/UpdateUser/
+        // PUT: api/v1/Auth/UpdateUser/
         public async Task<ActionResult<LoginDto>> UpdateUser(UpdateUserPayload payload)
         {
             var responsePackage = await _authService.UpdateUser(payload);

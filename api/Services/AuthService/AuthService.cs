@@ -99,9 +99,9 @@ namespace Services.AuthService
 
         }
 
-        public async Task<ResponsePackage<LoginDto>> GetUser()
+        public async Task<ResponsePackage<UsuarioDto>> GetUser()
         {
-            var responsePackage = new ResponsePackage<LoginDto>()
+            var responsePackage = new ResponsePackage<UsuarioDto>()
             {
                 Errors = HttpStatusCode.Unauthorized,
                 Message = "Usuario no autorizado",
@@ -112,7 +112,7 @@ namespace Services.AuthService
 
             responsePackage.Errors = null;
             responsePackage.Message = "Usuario Actual";
-            var loginDto = _mapper.Map<LoginDto>(usuario);
+            var loginDto = _mapper.Map<UsuarioDto>(usuario);
             loginDto.Token = _jwtGenerator.CrearToken(usuario);
             responsePackage.Result = loginDto;
             return responsePackage;
