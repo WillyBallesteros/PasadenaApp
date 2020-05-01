@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {Container, Avatar, Typography, TextField, Button} from '@material-ui/core';
 import style from '../Tool/Style';
 import LockOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
+import { loginUsuario } from '../../actions/UsuarioAction';
 
 const Login = () => {
   const [usuario, setUsuario] = useState({
@@ -15,7 +16,15 @@ const Login = () => {
         ...anterior,
         [name] : value        
     }));
-};
+  };
+
+  const loginUsuarioBtn = e => {
+      e.preventDefault();
+      loginUsuario(usuario).then(response => {
+          console.log('login exitoso',response);
+          window.localStorage.setItem("token_seguridad", response.data.result != null && response.data.result.token);
+      });
+  }
 
   return(
       <Container maxWidth="xs" justify="center">
@@ -29,7 +38,7 @@ const Login = () => {
             <form style={style.form}>
                 <TextField value={usuario.Email} onChange={addValuesToMemory} variant="outlined" label="Ingrese email" name="Email" fullWidth margin="normal"/>
                 <TextField value={usuario.Password} onChange={addValuesToMemory} variant="outlined" type="password" label="password" name="Password" fullWidth margin="normal" />
-                <Button type="submit" fullWidth variant="contained" color="primary" style={style.submit}>
+                <Button type="submit" onClick={loginUsuarioBtn} fullWidth variant="contained" color="primary" style={style.submit}>
                     Enviar
                 </Button>
             </form>
