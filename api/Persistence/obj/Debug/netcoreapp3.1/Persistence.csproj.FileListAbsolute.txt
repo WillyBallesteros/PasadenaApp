@@ -6,7 +6,6 @@ C:\Dev\PasadenaApp\api\Persistence\bin\Debug\netcoreapp3.1\Persistence.pdb
 C:\Dev\PasadenaApp\api\Persistence\bin\Debug\netcoreapp3.1\Core.dll
 C:\Dev\PasadenaApp\api\Persistence\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.csprojAssemblyReference.cache
-C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.csproj.CoreCompileInputs.cache
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.AssemblyInfoInputs.cache
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.AssemblyInfo.cs
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.csproj.CopyComplete

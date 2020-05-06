@@ -21,6 +21,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence;
+using Persistence.DapperConexion;
 using Security.TokenSecurity;
 using Services.AuthService;
 using Services.Departamento;
@@ -51,6 +52,8 @@ namespace WebAPI
             {
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.Configure<ConexionConfiguracion>(Configuration.GetSection("DefaultConnection"));
 
             services.AddControllers(opt =>
             {
