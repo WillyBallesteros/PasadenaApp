@@ -1,8 +1,13 @@
 import HttpClient from "../services/HttpClient";
+import axios from 'axios';
+
+const instancia = axios.create();
+instancia.CancelToken = axios.CancelToken;
+instancia.isCancel = axios.isCancel;
 
 export const registrarUsuario = (usuario) => {
   return new Promise((resolve, eject) => {
-    HttpClient.post("/Auth/Register", usuario).then((response) => {
+    instancia.post("/Auth/Register", usuario).then((response) => {
       resolve(response);
     });
   });
@@ -54,10 +59,26 @@ export const actualizarUsuario = (usuario, dispatch) => {
   });
 };
 
-export const loginUsuario = (usuario) => {
+export const loginUsuario = (usuario, dispatch) => {
   return new Promise((resolve, eject) => {
-    HttpClient.post("/Auth/Login", usuario).then((response) => {
+    instancia.post("/Auth/Login", usuario).then(response => {
+      
+      if (response.data.result && response.data.result.imagenPerfil) {
+        let fotoPerfil = response.data.result.imagenPerfil;
+        const nuevoFile =
+          "data:image/" + fotoPerfil.extension + ";base64," + fotoPerfil.data;
+        response.data.result.imagenPerfil = nuevoFile;
+      }
+
+      dispatch({
+        type: "INICIAR_SESION",
+        sesion : response.data.result,
+        autenticado : true
+      })
+      
       resolve(response);
-    });
+    }).catch(error => {
+      resolve(error.response);
+    })
   });
 };

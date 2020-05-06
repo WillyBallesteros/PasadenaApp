@@ -5,17 +5,10 @@ import { useStateValue } from "../../context/store";
 
 const AppNavBar = () => {
     const [{ sesionUsuario }, dispatch] = useStateValue();
-    if(sesionUsuario && sesionUsuario.autenticado) {
-        return (
-            <AppBar position="static">
-                <BarSesion />
-            </AppBar>
-        );
-    }
-    return (
-        <AppBar position="static">
-        </AppBar>
-    );
+    
+    return sesionUsuario
+      ? (sesionUsuario.autenticado == true ? <AppBar position="static"><BarSesion /></AppBar> : null)
+      : null
 };
 
 export default AppNavBar;

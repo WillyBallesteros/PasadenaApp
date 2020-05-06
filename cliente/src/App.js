@@ -10,6 +10,7 @@ import PerfilUsuario from "./components/security/PerfilUsuario";
 import RegistrarUsuario from "./components/security/RegistrarUsuario";
 import { useStateValue } from "./context/store";
 import { obtenerUsuarioActual } from "./actions/UsuarioAction";
+import RutaSegura from "./components/navegacion/RutaSegura";
 
 function App() {
   const [{ openSnackbar }, dispatch] = useStateValue();
@@ -61,8 +62,16 @@ function App() {
                 path="/auth/registrar"
                 component={RegistrarUsuario}
               />
-              <Route exact path="/auth/perfil" component={PerfilUsuario} />
-              <Route exact path="/" component={PerfilUsuario} />
+              <RutaSegura 
+                  exact
+                  path = "/auth/perfil"
+                  component = {PerfilUsuario}
+              />
+              <RutaSegura 
+                  exact
+                  path = "/"
+                  component = {PerfilUsuario}
+              />
             </Switch>
           </Grid>
         </MuithemeProvider>
