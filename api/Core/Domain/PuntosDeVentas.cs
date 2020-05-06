@@ -9,6 +9,7 @@ namespace Core.Domain
             Anuncios = new HashSet<Anuncios>();
             Productos = new HashSet<Productos>();
             Usuarios = new HashSet<Usuarios>();
+            EmpresaLink = new HashSet<EmpresasPuntoVentas>();
         }
 
         public int PuntoVentaId { get; set; }
@@ -30,5 +31,6 @@ namespace Core.Domain
         public virtual ICollection<Anuncios> Anuncios { get; set; }
         public virtual ICollection<Productos> Productos { get; set; }
         public virtual ICollection<Usuarios> Usuarios { get; set; }
+        public virtual ICollection<EmpresasPuntoVentas> EmpresaLink { get; set; }
     }
 }

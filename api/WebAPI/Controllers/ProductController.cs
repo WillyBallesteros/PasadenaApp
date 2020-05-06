@@ -1,4 +1,6 @@
-﻿using Core.Payload;
+﻿using System.Threading.Tasks;
+using Core.Dtos;
+using Core.Payload;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Producto;
@@ -18,9 +20,9 @@ namespace WebAPI.Controllers
         [HttpGet]
         [AllowAnonymous]
         [Route("GetProductsByGroup")]
-        public IActionResult GetProductsByGroup([FromQuery] ProductsByGroupPayload payload)
+        public async Task<ActionResult<ProductoDto>> GetProductsByGroup([FromQuery] ProductsByGroupPayload payload)
         {
-            var responsePackage = _productoService.GetProductsByGroup(payload);
+            var responsePackage = await _productoService.GetProductsByGroup(payload);
             return Ok(responsePackage);
         }
     }

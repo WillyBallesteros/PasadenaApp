@@ -22,6 +22,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Persistence;
 using Persistence.DapperConexion;
+using Persistence.DapperConexion.Producto;
 using Security.TokenSecurity;
 using Services.AuthService;
 using Services.Departamento;
@@ -53,7 +54,8 @@ namespace WebAPI
                 opt.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.Configure<ConexionConfiguracion>(Configuration.GetSection("DefaultConnection"));
+            services.AddOptions();
+            services.Configure<ConexionConfiguracion>(Configuration.GetSection("ConnectionStrings"));
 
             services.AddControllers(opt =>
             {
@@ -63,7 +65,9 @@ namespace WebAPI
                 cfg.RegisterValidatorsFromAssemblyContaining<LoginPayloadValidator>()
                    .RegisterValidatorsFromAssemblyContaining<RegisterPayloadValidator>()
                    .RegisterValidatorsFromAssemblyContaining<UpdateUserPayloadValidator>()
-            );
+            ).AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            ); 
 
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -85,6 +89,8 @@ namespace WebAPI
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserSession, UserSession>();
             services.AddScoped<IDocumentService, DocumentService>();
+            services.AddTransient<IFactoryConection, FactoryConection>();
+            services.AddScoped<IProducto, ProductoRepositorio>();
 
             //Configuración de AspIdentityCore
             var builder = services.AddIdentityCore<Usuarios>();

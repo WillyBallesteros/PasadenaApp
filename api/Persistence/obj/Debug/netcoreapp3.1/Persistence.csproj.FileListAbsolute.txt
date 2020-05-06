@@ -12,3 +12,4 @@ C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.csproj.Co
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.dll
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.pdb
 C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.genruntimeconfig.cache
+C:\Dev\PasadenaApp\api\Persistence\obj\Debug\netcoreapp3.1\Persistence.csproj.CoreCompileInputs.cache

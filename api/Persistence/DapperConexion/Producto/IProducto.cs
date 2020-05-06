@@ -6,10 +6,10 @@ namespace Persistence.DapperConexion.Producto
 {
     public interface IProducto
     {
-        Task<IEnumerable<ProductoDto>> ObtenerLista();
-        Task<ProductoDto> ObetenerPorId(int id);
-        Task<int> Nuevo(ProductoDto parametros);
-        Task<int> Actualizar(ProductoDto parametros);
-        Task<int> Elimina(int id);
+        public Task<IEnumerable<ProductoDto>> ObtenerLista();
+        public Task<ProductoDto> ObetenerPorId(int id);
+        public Task<int> Nuevo(ProductoDto parametros);
+        public Task<int> Actualizar(ProductoDto parametros);
+        public Task<int> Elimina(int id);
     }
 }

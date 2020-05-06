@@ -12,3 +12,5 @@ C:\Dev\PasadenaApp\api\Security\bin\Debug\netcoreapp3.1\Services.pdb
 C:\Dev\PasadenaApp\api\Security\bin\Debug\netcoreapp3.1\Core.pdb
 C:\Dev\PasadenaApp\api\Security\obj\Debug\netcoreapp3.1\Security.csproj.CopyComplete
 C:\Dev\PasadenaApp\api\Security\obj\Debug\netcoreapp3.1\Security.csproj.CoreCompileInputs.cache
+C:\Dev\PasadenaApp\api\Security\bin\Debug\netcoreapp3.1\Persistence.dll
+C:\Dev\PasadenaApp\api\Security\bin\Debug\netcoreapp3.1\Persistence.pdb

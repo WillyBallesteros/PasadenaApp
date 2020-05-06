@@ -29,6 +29,9 @@ namespace Persistence
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<TiposDeDocumentos> TiposDeDocumentos { get; set; }
         public virtual DbSet<Documents> Documents { get; set; }
+        public virtual DbSet<TiposDeEmpresas> TiposDeEmpresas { get; set; }
+        public virtual DbSet<Empresas> Empresas { get; set; }
+        public virtual DbSet<EmpresasPuntoVentas> EmpresasPuntoVentas { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -252,6 +255,28 @@ namespace Persistence
                     .WithMany(p => p.Usuarios)
                     .HasForeignKey(d => d.TipoDocumentoId)
                     .HasConstraintName("FK_Usuario_TipoDocumento");
+            });
+
+            modelBuilder.Entity<TiposDeEmpresas>(entity =>
+            {
+                entity.HasKey(e => e.TipoEmpresaId)
+                    .HasName("PK_TipoEmpresa");
+
+                entity.ToTable("TiposDeEmpresas", "loc");
+
+                entity.Property(e => e.TipoEmpresaNombre).HasMaxLength(80);
+            });
+
+            modelBuilder.Entity<Empresas>(entity =>
+            {
+                entity.HasKey(e => e.EmpresaId)
+                    .HasName("PK_Empresas");
+
+                entity.ToTable("Empresas", "loc");
+
+                entity.Property(e => e.EmpresaNombre).HasMaxLength(200);
+                entity.Property(e => e.Nit).HasMaxLength(30);
+
             });
 
             //OnModelCreatingPartial(modelBuilder);
