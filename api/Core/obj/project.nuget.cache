@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JTkpwWpn34W15+MjM39AcqpeZ8ZRqOI1fHoC6cqJgk6iYqW7zilFcCx2WwX34kMftIbtuFOxVQiYW54LzDTRKw==",
+  "dgSpecHash": "/MDc8wwI2MqkCukRAqZxDZv5p2pN4r8XQxct3BHMLXbQBqA+M9QgIecsDXIBUgU6fwhuzw+O+nnTgOK3fOlsfA==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
+  "projectFilePath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

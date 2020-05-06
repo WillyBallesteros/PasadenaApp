@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
 namespace Persistence.Migrations
 {
     [DbContext(typeof(PasadenaAppContext))]
-    partial class PasadenaAppContextModelSnapshot : ModelSnapshot
+    [Migration("20200506230905_AgregarPuntosEmpresa")]
+    partial class AgregarPuntosEmpresa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,22 +191,29 @@ namespace Persistence.Migrations
                     b.ToTable("Empresas","loc");
                 });
 
-            modelBuilder.Entity("Core.Domain.EmpresasPuntosVentas", b =>
+            modelBuilder.Entity("Core.Domain.EmpresasPuntoVentas", b =>
                 {
+                    b.Property<int>("EmpresasPuntoVentaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("EmpresaId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PuntoDeVentaPuntoVentaId")
                         .HasColumnType("int");
 
                     b.Property<int>("PuntoVentaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("EmpresasPuntoVentaId")
-                        .HasColumnType("int");
+                    b.HasKey("EmpresasPuntoVentaId");
 
-                    b.HasKey("EmpresaId", "PuntoVentaId");
+                    b.HasIndex("EmpresaId");
 
-                    b.HasIndex("PuntoVentaId");
+                    b.HasIndex("PuntoDeVentaPuntoVentaId");
 
-                    b.ToTable("EmpresasPuntosVentas","loc");
+                    b.ToTable("EmpresasPuntoVentas");
                 });
 
             modelBuilder.Entity("Core.Domain.Grupos", b =>
@@ -694,7 +703,7 @@ namespace Persistence.Migrations
                         .HasForeignKey("TipoEmpresaId");
                 });
 
-            modelBuilder.Entity("Core.Domain.EmpresasPuntosVentas", b =>
+            modelBuilder.Entity("Core.Domain.EmpresasPuntoVentas", b =>
                 {
                     b.HasOne("Core.Domain.Empresas", "Empresa")
                         .WithMany("PuntoVentasLink")
@@ -704,9 +713,7 @@ namespace Persistence.Migrations
 
                     b.HasOne("Core.Domain.PuntosDeVentas", "PuntoDeVenta")
                         .WithMany("EmpresaLink")
-                        .HasForeignKey("PuntoVentaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PuntoDeVentaPuntoVentaId");
                 });
 
             modelBuilder.Entity("Core.Domain.Productos", b =>

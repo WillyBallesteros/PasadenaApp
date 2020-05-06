@@ -31,7 +31,7 @@ namespace Persistence
         public virtual DbSet<Documents> Documents { get; set; }
         public virtual DbSet<TiposDeEmpresas> TiposDeEmpresas { get; set; }
         public virtual DbSet<Empresas> Empresas { get; set; }
-        public virtual DbSet<EmpresasPuntoVentas> EmpresasPuntoVentas { get; set; }
+        public virtual DbSet<EmpresasPuntosVentas> EmpresasPuntoVentas { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -278,6 +278,9 @@ namespace Persistence
                 entity.Property(e => e.Nit).HasMaxLength(30);
 
             });
+
+            modelBuilder.Entity<EmpresasPuntosVentas>().ToTable("EmpresasPuntosVentas", "loc").HasKey(ba => new { ba.EmpresaId, ba.PuntoVentaId });
+
 
             //OnModelCreatingPartial(modelBuilder);
             base.OnModelCreating(modelBuilder);

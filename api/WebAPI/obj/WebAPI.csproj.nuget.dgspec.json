@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {}
+    "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+    "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
+        "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Core\\obj\\",
+        "outputPath": "C:\\dev\\PasadenaApp\\api\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -66,9 +66,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -77,14 +74,14 @@
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+    "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\obj\\",
+        "outputPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -104,8 +101,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj"
               }
             }
           }
@@ -153,9 +150,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -164,14 +158,14 @@
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj": {
+    "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
+        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj",
         "projectName": "Security",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
+        "projectPath": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Security\\obj\\",
+        "outputPath": "C:\\dev\\PasadenaApp\\api\\Security\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -191,8 +185,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj"
               }
             }
           }
@@ -222,9 +216,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -233,14 +224,14 @@
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+    "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
+        "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Services\\obj\\",
+        "outputPath": "C:\\dev\\PasadenaApp\\api\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -260,11 +251,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -298,9 +289,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -309,14 +297,14 @@
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {
+    "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+        "projectPath": "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\obj\\",
+        "outputPath": "C:\\dev\\PasadenaApp\\api\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -336,14 +324,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
+              "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+                "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj"
               }
             }
           }

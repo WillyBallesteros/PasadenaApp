@@ -3141,10 +3141,7 @@
         },
         "runtime": {
           "bin/placeholder/Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Persistence/1.0.0": {
         "type": "project",
@@ -3161,10 +3158,7 @@
         },
         "runtime": {
           "bin/placeholder/Persistence.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Security/1.0.0": {
         "type": "project",
@@ -3178,10 +3172,7 @@
         },
         "runtime": {
           "bin/placeholder/Security.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Services/1.0.0": {
         "type": "project",
@@ -3197,10 +3188,7 @@
         },
         "runtime": {
           "bin/placeholder/Services.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -9720,11 +9708,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\obj\\",
+      "outputPath": "C:\\dev\\PasadenaApp\\api\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -9744,14 +9732,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+            "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
             },
-            "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj"
+            "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj": {
+              "projectPath": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj"
             },
-            "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
+            "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+              "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj"
             }
           }
         }

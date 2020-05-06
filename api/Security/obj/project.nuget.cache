@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6B2wt9NdtYXB0johTIcdNWKptpN/qBuXZ87pNtqLOzOQ434lvBtWxNKGjk2d3pJ/ysMssxJZUVcrMx1q+LAQew==",
+  "dgSpecHash": "K1t4tVOs5xvyM7CFDeD3gvuoWGKa6mD4/icpri2yXTSfCkGpy8mDKA5UjHTX0aqt5IfL/9GeblYWmIw/pwRKJQ==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
+  "projectFilePath": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

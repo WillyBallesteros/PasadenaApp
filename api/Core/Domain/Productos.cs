@@ -26,6 +26,8 @@ namespace Core.Domain
         public string Detalle { get; set; }
         public int Cantidad { get; set; }
 
+        public bool Destacado { get; set; }
+
         public virtual Grupos Grupo { get; set; }
         public virtual Marcas Marca { get; set; }
         public virtual PuntosDeVentas PuntoVenta { get; set; }

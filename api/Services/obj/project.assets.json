@@ -1783,10 +1783,7 @@
         },
         "runtime": {
           "bin/placeholder/Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Persistence/1.0.0": {
         "type": "project",
@@ -1803,10 +1800,7 @@
         },
         "runtime": {
           "bin/placeholder/Persistence.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -6165,11 +6159,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
+      "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\PasadenaApp\\api\\Services\\obj\\",
+      "outputPath": "C:\\dev\\PasadenaApp\\api\\Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6189,11 +6183,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
+            "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+              "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj"
             },
-            "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+            "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
             }
           }
         }
@@ -6227,9 +6221,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

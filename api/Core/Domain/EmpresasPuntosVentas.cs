@@ -1,6 +1,6 @@
 ﻿namespace Core.Domain
 {
-    public class EmpresasPuntoVentas
+    public class EmpresasPuntosVentas
     {
         public int EmpresaId { get; set; }
         public Empresas Empresa { get; set; }

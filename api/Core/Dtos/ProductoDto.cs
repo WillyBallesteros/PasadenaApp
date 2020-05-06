@@ -15,6 +15,7 @@
         public string Presentacion { get; set; }
         public string Detalle { get; set; }
         public int Cantidad { get; set; }
+        public bool Destacado { get; set; }
 
     }
 }
