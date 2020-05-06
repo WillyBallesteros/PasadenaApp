@@ -1,4 +1,5 @@
-﻿using Core.Repositories;
+﻿using System.Threading.Tasks;
+using Core.Repositories;
 
 namespace Core
 {
@@ -7,6 +8,9 @@ namespace Core
         IDepartamentosRepository Departamentos { get; }
         IUsuariosRepository Usuarios { get; }
         IProductosRepository Productos { get; }
+        IDocumentsRepository Documents { get; }
         int Complete();
+        Task<int> SaveChangesAsync();
+
     }
 }

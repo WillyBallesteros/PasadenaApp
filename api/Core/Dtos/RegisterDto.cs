@@ -6,5 +6,6 @@
         public string Apellidos { get; set; }
         public string Token { get; set; }
         public string Username { get; set; }
+        public ImagenDto ImagenPerfil { get; set; }
     }
 }

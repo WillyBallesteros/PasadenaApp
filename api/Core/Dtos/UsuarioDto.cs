@@ -12,5 +12,6 @@
         public int PuntoVentaId { get; set; }
         public bool Activo { get; set; }
         public string Token { get; set; }
+        public ImagenDto ImagenPerfil { get; set; }
     }
 }

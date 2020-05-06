@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System.Threading.Tasks;
+using Core;
 using Core.Repositories;
 using Persistence.Repositories;
 
@@ -14,15 +15,22 @@ namespace Persistence
             Departamentos = new DepartamentosRepository(_context);
             Usuarios = new UsuariosRepository(_context);
             Productos = new ProductosRepository(_context);
+            Documents = new DocumentsRepository(_context);
         }
 
         public IDepartamentosRepository Departamentos { get; private set; }
         public IUsuariosRepository Usuarios { get; private set; }
         public IProductosRepository Productos { get; private set; }
+        public IDocumentsRepository Documents { get; private set; }
 
         public int Complete()
         {
             return _context.SaveChanges();
+        }
+
+        public async Task<int> SaveChangesAsync()
+        {
+            return await _context.SaveChangesAsync();
         }
 
         public void Dispose()

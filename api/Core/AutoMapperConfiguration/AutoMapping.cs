@@ -21,6 +21,7 @@ namespace Core.AutoMapperConfiguration
             CreateMap<RegisterDto, Usuarios>();
             CreateMap<Productos, ProductoDto>();
             CreateMap<ProductoDto, Productos>();
+
         }
     }
 }

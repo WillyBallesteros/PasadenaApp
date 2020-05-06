@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 
-namespace api.Persistence.Repositories
+namespace Persistence.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {

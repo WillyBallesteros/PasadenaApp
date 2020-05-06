@@ -24,6 +24,7 @@ using Persistence;
 using Security.TokenSecurity;
 using Services.AuthService;
 using Services.Departamento;
+using Services.DocumentService;
 using Services.Producto;
 
 
@@ -80,6 +81,7 @@ namespace WebAPI
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IJwtGenerator, JwtGenerator>();
             services.AddScoped<IUserSession, UserSession>();
+            services.AddScoped<IDocumentService, DocumentService>();
 
             //Configuración de AspIdentityCore
             var builder = services.AddIdentityCore<Usuarios>();

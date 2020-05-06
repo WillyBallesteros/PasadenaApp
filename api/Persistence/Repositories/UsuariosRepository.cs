@@ -1,5 +1,4 @@
-﻿using api.Persistence.Repositories;
-using Core.Domain;
+﻿using Core.Domain;
 using Core.Repositories;
 
 namespace Persistence.Repositories

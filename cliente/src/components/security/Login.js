@@ -3,8 +3,9 @@ import {Container, Avatar, Typography, TextField, Button} from '@material-ui/cor
 import style from '../Tool/Style';
 import LockOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import { loginUsuario } from '../../actions/UsuarioAction';
+import { withRouter } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
   const [usuario, setUsuario] = useState({
       Email : '',
       Password : ''
@@ -21,8 +22,8 @@ const Login = () => {
   const loginUsuarioBtn = e => {
       e.preventDefault();
       loginUsuario(usuario).then(response => {
-          console.log('login exitoso',response);
           window.localStorage.setItem("token_seguridad", response.data.result != null && response.data.result.token);
+          props.history.push('/auth/perfil');
       });
   }
 
@@ -47,4 +48,4 @@ const Login = () => {
   ); 
 }
 
-export default Login;
+export default withRouter(Login);

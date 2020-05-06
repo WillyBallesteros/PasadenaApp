@@ -28,6 +28,7 @@ namespace Persistence
         public virtual DbSet<TiposDeAnuncios> TiposDeAnuncios { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
         public virtual DbSet<TiposDeDocumentos> TiposDeDocumentos { get; set; }
+        public virtual DbSet<Documents> Documents { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -206,6 +207,18 @@ namespace Persistence
                 entity.ToTable("TiposDeDocumentos", "auth");
 
                 entity.Property(e => e.TipoDocumentoNombre).HasMaxLength(80);
+            });
+
+            modelBuilder.Entity<Documents>(entity =>
+            {
+                entity.HasKey(e => e.DocumentId)
+                    .HasName("PK_Documents");
+
+                entity.ToTable("Documents", "auth");
+
+                entity.Property(e => e.Nombre).HasMaxLength(200);
+                entity.Property(e => e.Extension).HasMaxLength(30);
+
             });
 
             modelBuilder.Entity<Usuarios>(entity =>

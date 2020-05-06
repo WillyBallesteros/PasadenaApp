@@ -134,6 +134,32 @@ namespace Persistence.Migrations
                     b.ToTable("Departamentos","loc");
                 });
 
+            modelBuilder.Entity("Core.Domain.Documents", b =>
+                {
+                    b.Property<Guid>("DocumentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("Contenido")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Nombre")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ObjetoReferencia")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("DocumentId");
+
+                    b.ToTable("Documents");
+                });
+
             modelBuilder.Entity("Core.Domain.Grupos", b =>
                 {
                     b.Property<int>("GrupoId")

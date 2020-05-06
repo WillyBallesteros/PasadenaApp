@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
@@ -57,10 +58,13 @@ namespace Services.AuthService
             var resultado = await _signInManager.CheckPasswordSignInAsync(usuario, payload.Password, false);
             if (!resultado.Succeeded) return responsePackage;
 
+            var imagenCliente = await GetImagenPerfil(new Guid(usuario.Id));
+
             responsePackage.Errors = null;
             responsePackage.Message = "Usuario autorizado";
             var loginDto = _mapper.Map<LoginDto>(usuario);
             loginDto.Token = _jwtGenerator.CrearToken(usuario);
+            loginDto.ImagenPerfil = imagenCliente;
             responsePackage.Result = loginDto;
             return responsePackage;
         }
@@ -107,16 +111,37 @@ namespace Services.AuthService
                 Message = "Usuario no autorizado",
                 Result = null
             };
+            var userName = _userSession.GetUserSession();
+            if (userName == null) return responsePackage;
 
-            var usuario = await _userManager.FindByNameAsync(_userSession.GetUserSession());
+            var usuario = await _userManager.FindByNameAsync(userName);
+
+            var imagenCliente = await GetImagenPerfil(new Guid(usuario.Id));
 
             responsePackage.Errors = null;
             responsePackage.Message = "Usuario Actual";
-            var loginDto = _mapper.Map<UsuarioDto>(usuario);
-            loginDto.Token = _jwtGenerator.CrearToken(usuario);
-            responsePackage.Result = loginDto;
+            var usuarioDto = _mapper.Map<UsuarioDto>(usuario);
+            usuarioDto.Token = _jwtGenerator.CrearToken(usuario);
+            usuarioDto.ImagenPerfil = imagenCliente;
+            responsePackage.Result = usuarioDto;
             return responsePackage;
 
+        }
+
+        public async Task<ImagenDto> GetImagenPerfil(Guid usuarioId)
+        {
+            var imagenCliente = new ImagenDto();
+            var imagenPerfil = await _unitOfWork.Documents
+                .GetFirstOrDefaultAsync(x => x.ObjetoReferencia == usuarioId);
+
+            if (imagenPerfil == null) return null;
+            imagenCliente = new ImagenDto
+            {
+                Data = Convert.ToBase64String(imagenPerfil.Contenido),
+                Extension = imagenPerfil.Extension,
+                Nombre = imagenPerfil.Nombre
+            };
+            return imagenCliente;
         }
 
         public async Task<ResponsePackage<RegisterDto>> UpdateUser(UpdateUserPayload payload)
@@ -133,6 +158,34 @@ namespace Services.AuthService
                 return responsePackage;
             }
 
+
+            if (payload.ImagenPerfil != null)
+            {
+                var resultadoImagen =
+                    await _unitOfWork.Documents.GetFirstOrDefaultAsync(x =>
+                        x.ObjetoReferencia == new Guid(usuarioIden.Id));
+
+                if (resultadoImagen == null)
+                {
+                    var imagen = new Documents
+                    {
+                        Contenido = Convert.FromBase64String(payload.ImagenPerfil.Data),
+                        Nombre = payload.ImagenPerfil.Nombre,
+                        Extension = payload.ImagenPerfil.Extension,
+                        ObjetoReferencia = new Guid(usuarioIden.Id),
+                        DocumentId = Guid.NewGuid(),
+                        FechaCreacion = DateTime.UtcNow
+                    };
+                    _unitOfWork.Documents.Insert(imagen);
+                }
+                else
+                {
+                    resultadoImagen.Contenido = Convert.FromBase64String(payload.ImagenPerfil.Data);
+                    resultadoImagen.Nombre = payload.ImagenPerfil.Nombre;
+                    resultadoImagen.Extension = payload.ImagenPerfil.Extension;
+                }
+            }
+
             usuarioIden.Nombres = payload.Nombres;
             usuarioIden.Apellidos = payload.Apellidos;
             usuarioIden.Telefono = payload.Telefono;
@@ -145,10 +198,12 @@ namespace Services.AuthService
             var result = await _userManager.UpdateAsync(usuarioIden);
             if (result.Succeeded)
             {
+                var imagenCliente = await GetImagenPerfil(new Guid(usuarioIden.Id));
                 responsePackage.Errors = null;
                 responsePackage.Message = "Usuario actualizado correctamente";
                 var registerDto = _mapper.Map<RegisterDto>(usuarioIden);
                 registerDto.Token = _jwtGenerator.CrearToken(usuarioIden);
+                registerDto.ImagenPerfil = imagenCliente;
                 responsePackage.Result = registerDto;
                 return responsePackage;
             }
