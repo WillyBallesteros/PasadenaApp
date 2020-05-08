@@ -2,10 +2,10 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using Core;
-using Core.Dtos;
+using Core.Models;
 using Core.Payload;
+using Persistence.DapperConexion.Paginacion;
 using Persistence.DapperConexion.Producto;
-using Services.Handlers;
 
 namespace Services.Producto
 {
@@ -14,37 +14,43 @@ namespace Services.Producto
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IProducto _productosRepository;
-        public ProductoService(IUnitOfWork unitOfWork, IMapper mapper, IProducto productosRepository)
+        private readonly IPaginacion _paginacion;
+        public ProductoService(IUnitOfWork unitOfWork,
+            IMapper mapper,
+            IProducto productosRepository,
+            IPaginacion paginacion)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _productosRepository = productosRepository;
+            _paginacion = paginacion;
         }
-        //public ResponsePackage<IEnumerable<ProductoDto>> GetProductsByGroup(ProductsByGroupPayload payload)
-        //{
-        //    var productos = _unitOfWork.Productos.GetMany(x => x.GrupoId == payload.GroupId);
-        //    var productosDto = _mapper.Map<IEnumerable<ProductoDto>>(productos);
 
-        //    return new ResponsePackage<IEnumerable<ProductoDto>>
-        //    {
-        //        Message = "Listado de Productos por Grupo",
-        //        Result = productosDto,
-        //        Errors = "N/A"
-        //    };
-        //}
-
-        public async Task<ResponsePackage<IEnumerable<ProductoDto>>> GetProductsByGroup(ProductsByGroupPayload payload)
+        public async Task<PaginacionModel> GetProductsByGroup(PaginacionPayload payload)
         {
-            var productos = await _productosRepository.ObtenerLista();
+            var storeProcedure = "usp_obtener_producto_grupo_paginacion";
+            var ordenamiento = "ProductoNombre";
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("GroupId", payload.GroupId);
+            var productos = await _paginacion.DevolverPaginacion(storeProcedure, payload.NumeroPagina, payload.CantidadElementos,
+                parametros, ordenamiento);
 
-            var tales = productos;
-
-            return new ResponsePackage<IEnumerable<ProductoDto>>
-            {
-                Message = "Listado de Productos por Grupo",
-                Result = productos,
-                Errors = "N/A"
-            };
+            return productos;
         }
+
+        public async Task<PaginacionModel> GetPaginacion(PaginacionPayload payload)
+        {
+            var storeProcedure = "usp_obtener_producto_paginacion";
+            var ordenamiento = "ProductoNombre";
+            var parametros = new Dictionary<string, object>();
+            parametros.Add("ProductoNombre", payload.NombreProducto);
+            var productos = await _paginacion.DevolverPaginacion(storeProcedure, payload.NumeroPagina, payload.CantidadElementos,
+                parametros, ordenamiento);
+
+            return productos;
+
+        }
+
+
     }
 }

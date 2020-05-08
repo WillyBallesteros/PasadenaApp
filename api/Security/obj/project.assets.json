@@ -1831,7 +1831,10 @@
         },
         "runtime": {
           "bin/placeholder/Core.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Persistence/1.0.0": {
         "type": "project",
@@ -1848,7 +1851,10 @@
         },
         "runtime": {
           "bin/placeholder/Persistence.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Services/1.0.0": {
         "type": "project",
@@ -1864,7 +1870,10 @@
         },
         "runtime": {
           "bin/placeholder/Services.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6294,11 +6303,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj",
+      "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
       "projectName": "Security",
-      "projectPath": "C:\\dev\\PasadenaApp\\api\\Security\\Security.csproj",
+      "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
       "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\PasadenaApp\\api\\Security\\obj\\",
+      "outputPath": "C:\\Dev\\PasadenaApp\\api\\Security\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -6318,8 +6327,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-              "projectPath": "C:\\dev\\PasadenaApp\\api\\Services\\Services.csproj"
+            "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+              "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
             }
           }
         }
@@ -6349,6 +6358,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Core.Dtos;
+using Core.Models;
 using Core.Payload;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -17,12 +18,21 @@ namespace WebAPI.Controllers
             _productoService = productoService;
         }
 
-        [HttpGet]
+        [HttpPost]
         [AllowAnonymous]
         [Route("GetProductsByGroup")]
-        public async Task<ActionResult<ProductoDto>> GetProductsByGroup([FromQuery] ProductsByGroupPayload payload)
+        public async Task<ActionResult<ProductoDto>> GetProductsByGroup(PaginacionPayload payload)
         {
             var responsePackage = await _productoService.GetProductsByGroup(payload);
+            return Ok(responsePackage);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("Report")]
+        public async Task<ActionResult<PaginacionModel>> Report(PaginacionPayload payload)
+        {
+            var responsePackage = await _productoService.GetPaginacion(payload);
             return Ok(responsePackage);
         }
     }

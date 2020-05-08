@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Core.Dtos;
+﻿using System.Threading.Tasks;
+using Core.Models;
 using Core.Payload;
-using Services.Handlers;
 
 namespace Services.Producto
 {
     public interface IProductoService
     {
-        Task<ResponsePackage<IEnumerable<ProductoDto>>> GetProductsByGroup(ProductsByGroupPayload payload);
+        Task<PaginacionModel> GetProductsByGroup(PaginacionPayload payload);
+        Task<PaginacionModel> GetPaginacion(PaginacionPayload payload);
     }
 }

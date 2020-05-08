@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VuqoMMbzJ5Q8F1xi//0TQvXys5TFBw6+DmAE9f0vjzMCMWO0oCIUoucz+eKUcvg1K8+vo857m31k65vunJRYWg==",
+  "dgSpecHash": "5gQimV5KUkv2EZCnH1YtqcVOKSA/fiKpbYr1+231ezvOS9bCH/uZlkwVfeSwct7tl2VyKz+CoLts/eJyLcjbtQ==",
   "success": true,
-  "projectFilePath": "C:\\dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+  "projectFilePath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\William\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\William\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {}
+    "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {}
   },
   "projects": {
-    "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+    "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj",
+        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\PasadenaApp\\api\\Core\\obj\\",
+        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -66,6 +66,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
@@ -74,14 +77,14 @@
         }
       }
     },
-    "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+    "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\dev\\PasadenaApp\\api\\Persistence\\obj\\",
+        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -101,8 +104,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-                "projectPath": "C:\\dev\\PasadenaApp\\api\\Core\\Core.csproj"
+              "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
               }
             }
           }
@@ -150,6 +153,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
