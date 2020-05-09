@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import {
   Toolbar,
   IconButton,
-  Typography,
   makeStyles,
   Button,
   Avatar,
-  Drawer
+  Drawer,
+  Typography,
 } from "@material-ui/core";
-import FotoUsuarioTemp from "../../../logo.svg";
 import { useStateValue } from "../../../context/store";
 import { MenuIzquierda } from "./MenuIzquierda";
-import { withRouter } from "react-router-dom";
-import { MenuDerecha } from "./MenuDerecha";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-
+import { withRouter, Link } from "react-router-dom";
+import { MenuDerechaNoSesion } from "./MenuDerechaNoSesion";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
   seccionMobile: {
     display: "flex",
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       display: "none",
     },
   },
@@ -50,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const BarSesion = (props) => {
+const BarNoSesion = (props) => {
   const classes = useStyles();
   const [{ sesionUsuario }, dispatch] = useStateValue();
   const [abrirMenuIzquierda, setAbrirMenuIzquierda] = useState(false);
@@ -72,20 +71,8 @@ const BarSesion = (props) => {
     setAbrirMenuDerecha(true);
   };
 
-  const salirSessionApp = () => {
-    window.localStorage.removeItem("token_seguridad");
-
-    dispatch({
-      type : "SALIR_SESION",
-      nuevoUsuario : null,
-      autenticado : false
-    })
-
-    props.history.push("/auth/login");
-  };
-
   return (
-    <React.Fragment> 
+    <React.Fragment>
       <Drawer
         open={abrirMenuDerecha}
         onClose={cerrarMenuDerecha}
@@ -96,24 +83,37 @@ const BarSesion = (props) => {
           onKeyDown={cerrarMenuDerecha}
           onClick={cerrarMenuDerecha}
         >
-          <MenuDerecha
-            classes={classes}
-            salirSession={salirSessionApp}
-            usuario={sesionUsuario ? sesionUsuario.usuario : null}
-          />
+          <MenuDerechaNoSesion classes={classes} />
         </div>
       </Drawer>
       <Toolbar>
-        <MenuIzquierda classes={classes}/>
+        <MenuIzquierda classes={classes} />
         <div className={classes.grow}></div>
         <div className={classes.seccionDesktop}>
-          <Button color="inherit" onClick={salirSessionApp}>
-            <ExitToAppIcon />
+          <Button
+            color="inherit"
+            button
+            component={Link}
+            button
+            to="/auth/login"
+          >
+            <AccountCircleIcon />&nbsp;
+            <Typography variant="body2" color="textSecondary" component="p">
+              Ingreso
+            </Typography>
           </Button>
-          <Button color="inherit">
-            {sesionUsuario ? sesionUsuario.usuario.nombres : ""}
+          <Button
+            color="inherit"
+            button
+            component={Link}
+            button
+            to="/auth/registrar"
+          >
+            <PersonAddIcon />&nbsp;
+            <Typography variant="body2" color="textSecondary" component="p">
+              Registro
+            </Typography>
           </Button>
-          <Avatar src={sesionUsuario.usuario.imagenPerfil || FotoUsuarioTemp}></Avatar>
         </div>
         <div className={classes.seccionMobile}>
           <IconButton color="inherit" onClick={abrirMenuDerechaAction}>
@@ -125,4 +125,4 @@ const BarSesion = (props) => {
   );
 };
 
-export default withRouter(BarSesion);
+export default withRouter(BarNoSesion);

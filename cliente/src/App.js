@@ -11,6 +11,7 @@ import RegistrarUsuario from "./components/security/RegistrarUsuario";
 import { useStateValue } from "./context/store";
 import { obtenerUsuarioActual } from "./actions/UsuarioAction";
 import RutaSegura from "./components/navegacion/RutaSegura";
+import PaginadorProducto from "./components/Productos/PaginadorProducto";
 
 function App() {
   const [{ openSnackbar }, dispatch] = useStateValue();
@@ -32,25 +33,25 @@ function App() {
   return iniciaApp === false ? null : (
     <React.Fragment>
       <Snackbar
-        anchorOrigin={{vertical: "bottom", horizontal:"center"}}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
         open={openSnackbar ? openSnackbar.open : false}
         autoHideDuration={3000}
-        ContentProps={{"aria-describedby" : "message-id"}}
-        message={ 
-          <span id="message-id">{openSnackbar ? openSnackbar.mensaje : ""}</span> 
+        ContentProps={{ "aria-describedby": "message-id" }}
+        message={
+          <span id="message-id">
+            {openSnackbar ? openSnackbar.mensaje : ""}
+          </span>
         }
-        onClose= {() => 
+        onClose={() =>
           dispatch({
-            type : 'OPEN_SNACKBAR',
+            type: "OPEN_SNACKBAR",
             openMensaje: {
               open: false,
-              mensaje: ""
-            }
+              mensaje: "",
+            },
           })
         }
-      >
-        
-      </Snackbar>  
+      ></Snackbar>
       <Router>
         <MuithemeProvider theme={theme}>
           <AppNavBar />
@@ -62,15 +63,12 @@ function App() {
                 path="/auth/registrar"
                 component={RegistrarUsuario}
               />
-              <RutaSegura 
-                  exact
-                  path = "/auth/perfil"
-                  component = {PerfilUsuario}
-              />
-              <RutaSegura 
-                  exact
-                  path = "/"
-                  component = {PerfilUsuario}
+              <RutaSegura exact path="/auth/perfil" component={PerfilUsuario} />
+              <RutaSegura exact path="/" component={PerfilUsuario} />
+              <Route
+                exact
+                path="/producto/paginador"
+                component={PaginadorProducto}
               />
             </Switch>
           </Grid>
