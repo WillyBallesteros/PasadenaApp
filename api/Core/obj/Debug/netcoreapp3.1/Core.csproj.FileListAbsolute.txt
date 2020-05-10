@@ -1,9 +1,0 @@
-C:\Dev\PasadenaApp\api\Core\bin\Debug\netcoreapp3.1\Core.deps.json
-C:\Dev\PasadenaApp\api\Core\bin\Debug\netcoreapp3.1\Core.dll
-C:\Dev\PasadenaApp\api\Core\bin\Debug\netcoreapp3.1\Core.pdb
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.dll
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.pdb
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
-C:\Dev\PasadenaApp\api\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
