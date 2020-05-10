@@ -53,12 +53,11 @@ const ProductoSearch = () => {
   const classes = useStyles();
   const [{ searchProduct }, dispatch] = useStateValue();
   let { search } = useParams();
-  console.log('url search', search);
-  var tales = (searchProduct && search != searchProduct.palabra) ? searchProduct.palabra : search;
-  console.log('tales', tales);
+  const [palabra, setPalabra] = useState(search);
   
+      
   const [paginadorRequest, setPaginadorRequest] = useState({
-    nombreProducto: (searchProduct && search != searchProduct.palabra) ? searchProduct.palabra : search,
+    nombreProducto: palabra,
     numeroPagina: 0,
     cantidadElementos: 10,
   });
@@ -70,6 +69,7 @@ const ProductoSearch = () => {
   });
 
   useEffect(() => {
+    console.log('dentro del useEffect', paginadorRequest.nombreProducto);
     const objetoPaginadorRequest = {
       nombreProducto: paginadorRequest.nombreProducto,
       numeroPagina: paginadorRequest.numeroPagina + 1,
@@ -91,13 +91,31 @@ const ProductoSearch = () => {
     }));
   };
 
-   const cambiarCantidadRecords = (event) => {
+  const cambiarPalabra = (nuevaPalabra) => {
+    console.log('entro a cambiar palabra', nuevaPalabra);
+    setPaginadorRequest((anterior) => ({
+      ...anterior,
+      nombreProducto: nuevaPalabra,
+    }));
+  };
+
+  const cambiarCantidadRecords = (event) => {
     setPaginadorRequest((anterior) => ({
       ...anterior,
       cantidadElementos: parseInt(event.target.value),
       numeroPagina: 0,
     }));
   };
+
+  if (searchProduct && palabra != searchProduct.palabra) {
+    console.log('palabra anterior' ,palabra);
+    console.log('palabra nueva', searchProduct.palabra);
+    
+    
+    setPalabra(searchProduct.palabra);
+    cambiarPalabra(searchProduct.palabra);
+    console.log('palabra cambiada' ,palabra);
+  }
   
   return (
     <React.Fragment>
@@ -160,6 +178,8 @@ const ProductoSearch = () => {
           </Grid>
         ))}
       </Grid>
+      <br />
+      <br />
       <TablePagination
         rowsPerPageOptions={[5, 10, 15]}
         count={paginadorResponse.totalRecords}

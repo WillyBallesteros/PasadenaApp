@@ -4,7 +4,6 @@ export const initialState = {
 }
 
 const searchProductReducer = (state = initialState, action) => {
-    console.log(action);
     switch(action.type) {
         
         case "ACTUALIZAR_PALABRA" :

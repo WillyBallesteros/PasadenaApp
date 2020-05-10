@@ -5,7 +5,7 @@ import InputBase from '@material-ui/core/InputBase';
 import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
-import { withRouter } from "react-router-dom";
+import { withRouter, useLocation } from "react-router-dom";
 import { useStateValue } from "../../context/store";
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const CajaBusqueda = (props) => {
+  let location = useLocation();
   const classes = useStyles();
   const [{ searchProduct }, dispatch] = useStateValue();
   const [palabra, setPalabra] = useState('');
@@ -43,7 +44,9 @@ const CajaBusqueda = (props) => {
       type : "ACTUALIZAR_PALABRA",
       palabra : palabra,
     })
-    props.history.push("/producto/busqueda/" + palabra);
+    if (location.pathname == "/") {
+      props.history.push("/producto/busqueda/" + palabra);
+    }
   };
 
   return (
