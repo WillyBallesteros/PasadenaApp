@@ -38,6 +38,19 @@ namespace Services.Producto
             return productos;
         }
 
+        public async Task<PaginacionModel> GetPromoProducts(PaginacionPayload payload)
+        {
+            var storeProcedure = "usp_obtener_producto_destacado_paginacion";
+            var ordenamiento = "ProductoNombre";
+            var parametros = new Dictionary<string, object>();
+            //parametros.Add("Destacado", payload.Destacado);
+            var productos = await _paginacion.DevolverPaginacion(storeProcedure, payload.NumeroPagina, payload.CantidadElementos,
+                parametros, ordenamiento);
+
+            return productos;
+
+        }
+
         public async Task<PaginacionModel> GetPaginacion(PaginacionPayload payload)
         {
             var storeProcedure = "usp_obtener_producto_paginacion";
@@ -50,7 +63,5 @@ namespace Services.Producto
             return productos;
 
         }
-
-
     }
 }

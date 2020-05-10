@@ -15,3 +15,11 @@ export const paginacionProductoPorGrupo = (paginador) => {
         })
     })
 }
+
+export const paginacionProductoDestacado = (paginador) => {
+    return new Promise((resolve, eject) => {
+        HttpCliente.post('/Product/GetPromoProducts', paginador).then(response => {
+            resolve(response);
+        })
+    })
+}

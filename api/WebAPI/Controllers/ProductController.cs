@@ -35,5 +35,16 @@ namespace WebAPI.Controllers
             var responsePackage = await _productoService.GetPaginacion(payload);
             return Ok(responsePackage);
         }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [Route("GetPromoProducts")]
+        public async Task<ActionResult<PaginacionModel>> GetPromoProducts(PaginacionPayload payload)
+        {
+            var responsePackage = await _productoService.GetPromoProducts(payload);
+            return Ok(responsePackage);
+        }
+
+        
     }
 }

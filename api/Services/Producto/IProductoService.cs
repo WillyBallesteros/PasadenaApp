@@ -8,5 +8,7 @@ namespace Services.Producto
     {
         Task<PaginacionModel> GetProductsByGroup(PaginacionPayload payload);
         Task<PaginacionModel> GetPaginacion(PaginacionPayload payload);
+        Task<PaginacionModel> GetPromoProducts(PaginacionPayload payload);
+
     }
 }

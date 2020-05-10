@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { paginacionProductoPorGrupo } from "../../actions/ProductoAction";
+import { paginacionProducto } from "../../actions/ProductoAction";
 import { TablePagination, Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -16,6 +16,9 @@ import ShareIcon from "@material-ui/icons/Share";
 import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Leche1 from "../../images/leche1.jpg";
+import { useParams } from "react-router-dom";
+import MenuPrincipal from "../MenuPrincipal/MenuPrincipal";
+import { useStateValue } from "../../context/store";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,10 +49,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PaginadorProducto = () => {
+const ProductoSearch = () => {
   const classes = useStyles();
+  const [{ searchProduct }, dispatch] = useStateValue();
+  let { search } = useParams();
+  console.log('url search', search);
+  var tales = (searchProduct && search != searchProduct.palabra) ? searchProduct.palabra : search;
+  console.log('tales', tales);
+  
   const [paginadorRequest, setPaginadorRequest] = useState({
-    groupId: 1,
+    nombreProducto: (searchProduct && search != searchProduct.palabra) ? searchProduct.palabra : search,
     numeroPagina: 0,
     cantidadElementos: 10,
   });
@@ -62,13 +71,13 @@ const PaginadorProducto = () => {
 
   useEffect(() => {
     const objetoPaginadorRequest = {
-      groupId: paginadorRequest.groupId,
+      nombreProducto: paginadorRequest.nombreProducto,
       numeroPagina: paginadorRequest.numeroPagina + 1,
       cantidadElementos: paginadorRequest.cantidadElementos,
     };
 
     const obtenerListaProducto = async () => {
-      const response = await paginacionProductoPorGrupo(objetoPaginadorRequest);
+      const response = await paginacionProducto(objetoPaginadorRequest);
       setPaginadorResponse(response.data);
     };
 
@@ -82,16 +91,18 @@ const PaginadorProducto = () => {
     }));
   };
 
-  const cambiarCantidadRecords = (event) => {
+   const cambiarCantidadRecords = (event) => {
     setPaginadorRequest((anterior) => ({
       ...anterior,
       cantidadElementos: parseInt(event.target.value),
       numeroPagina: 0,
     }));
   };
-
+  
   return (
-    <div className={classes.root}>
+    <React.Fragment>
+        <MenuPrincipal/>
+        <div className={classes.root}>
       <br />
       <br />
       <Grid
@@ -159,7 +170,9 @@ const PaginadorProducto = () => {
         labelRowsPerPage="Productos por página"
       ></TablePagination>
     </div>
+    </React.Fragment>
+    
   );
 };
 
-export default PaginadorProducto;
+export default ProductoSearch;

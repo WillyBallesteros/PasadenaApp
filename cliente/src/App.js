@@ -12,6 +12,8 @@ import { useStateValue } from "./context/store";
 import { obtenerUsuarioActual } from "./actions/UsuarioAction";
 import RutaSegura from "./components/navegacion/RutaSegura";
 import PaginadorProducto from "./components/Productos/PaginadorProducto";
+import ProductoSearch from "./components/Productos/ProductoSearch";
+import Inicio from "./components/inicio/Inicio";
 
 function App() {
   const [{ openSnackbar }, dispatch] = useStateValue();
@@ -64,11 +66,16 @@ function App() {
                 component={RegistrarUsuario}
               />
               <RutaSegura exact path="/auth/perfil" component={PerfilUsuario} />
-              <RutaSegura exact path="/" component={PerfilUsuario} />
+              <Route exact path="/" component={Inicio} />
               <Route
                 exact
                 path="/producto/paginador"
                 component={PaginadorProducto}
+              />
+              <Route
+                exact
+                path="/producto/busqueda/:search"
+                component={ProductoSearch}
               />
             </Switch>
           </Grid>

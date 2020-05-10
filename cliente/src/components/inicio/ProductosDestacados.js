@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { paginacionProductoPorGrupo } from "../../actions/ProductoAction";
+import { paginacionProductoDestacado } from "../../actions/ProductoAction";
 import { TablePagination, Grid } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
@@ -46,10 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PaginadorProducto = () => {
+const ProductosDestacados = () => {
   const classes = useStyles();
   const [paginadorRequest, setPaginadorRequest] = useState({
-    groupId: 1,
+    destacado: true,
     numeroPagina: 0,
     cantidadElementos: 10,
   });
@@ -62,13 +62,13 @@ const PaginadorProducto = () => {
 
   useEffect(() => {
     const objetoPaginadorRequest = {
-      groupId: paginadorRequest.groupId,
+      destacado: paginadorRequest.destacado,
       numeroPagina: paginadorRequest.numeroPagina + 1,
       cantidadElementos: paginadorRequest.cantidadElementos,
     };
 
     const obtenerListaProducto = async () => {
-      const response = await paginacionProductoPorGrupo(objetoPaginadorRequest);
+      const response = await paginacionProductoDestacado(objetoPaginadorRequest);
       setPaginadorResponse(response.data);
     };
 
@@ -149,6 +149,7 @@ const PaginadorProducto = () => {
           </Grid>
         ))}
       </Grid>
+      <br />
       <TablePagination
         rowsPerPageOptions={[5, 10, 15]}
         count={paginadorResponse.totalRecords}
@@ -162,4 +163,4 @@ const PaginadorProducto = () => {
   );
 };
 
-export default PaginadorProducto;
+export default ProductosDestacados;

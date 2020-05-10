@@ -98,9 +98,9 @@ const BarNoSesion = (props) => {
             to="/auth/login"
           >
             <AccountCircleIcon />&nbsp;
-            <Typography variant="body2" color="textSecondary" component="p">
+            {/* <Typography variant="body2" color="textSecondary" component="p">
               Ingreso
-            </Typography>
+            </Typography> */}
           </Button>
           <Button
             color="inherit"
@@ -110,9 +110,9 @@ const BarNoSesion = (props) => {
             to="/auth/registrar"
           >
             <PersonAddIcon />&nbsp;
-            <Typography variant="body2" color="textSecondary" component="p">
+            {/* <Typography variant="body2" color="textSecondary" component="p">
               Registro
-            </Typography>
+            </Typography> */}
           </Button>
         </div>
         <div className={classes.seccionMobile}>
