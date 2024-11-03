@@ -1,35 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {}
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Core\\obj\\",
+        "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj",
+        "packagesPath": "C:\\Users\\balle\\.nuget\\packages\\",
+        "outputPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\balle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,10 +35,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -61,51 +65,61 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
             },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\obj\\",
+        "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\balle\\.nuget\\packages\\",
+        "outputPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\balle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj"
               }
             }
           }
@@ -114,10 +128,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Dapper": {
               "target": "Package",
@@ -148,51 +168,61 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
             },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj": {
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\Security.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
+        "projectUniqueName": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\Security.csproj",
         "projectName": "Security",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Security\\obj\\",
+        "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\Security.csproj",
+        "packagesPath": "C:\\Users\\balle\\.nuget\\packages\\",
+        "outputPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\balle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj"
               }
             }
           }
@@ -201,10 +231,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -217,54 +253,64 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
             },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\Services\\obj\\",
+        "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj",
+        "packagesPath": "C:\\Users\\balle\\.nuget\\packages\\",
+        "outputPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\balle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Core\\Core.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Core\\Core.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -273,10 +319,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -293,57 +345,67 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
             },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {
+    "C:\\MISO\\Metricas\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\MISO\\Metricas\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\PasadenaApp\\api\\WebAPI\\obj\\",
+        "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\balle\\.nuget\\packages\\",
+        "outputPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\balle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Persistence\\Persistence.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Security\\Security.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\Security.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Security\\Security.csproj"
               },
-              "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj": {
-                "projectPath": "C:\\Dev\\PasadenaApp\\api\\Services\\Services.csproj"
+              "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj": {
+                "projectPath": "C:\\MISO\\Metricas\\PasadenaApp\\api\\Services\\Services.csproj"
               }
             }
           }
@@ -352,10 +414,16 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -394,10 +462,29 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.32, 3.1.32]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -406,7 +493,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
