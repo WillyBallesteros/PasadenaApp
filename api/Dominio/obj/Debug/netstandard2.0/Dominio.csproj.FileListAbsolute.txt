@@ -1,0 +1,9 @@
+C:\Dev\PasadenaApp\api\Dominio\bin\Debug\netstandard2.0\Dominio.deps.json
+C:\Dev\PasadenaApp\api\Dominio\bin\Debug\netstandard2.0\Dominio.dll
+C:\Dev\PasadenaApp\api\Dominio\bin\Debug\netstandard2.0\Dominio.pdb
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.AssemblyInfoInputs.cache
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.AssemblyInfo.cs
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.dll
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.pdb
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Dev\PasadenaApp\api\Dominio\obj\Debug\netstandard2.0\Dominio.csprojAssemblyReference.cache
